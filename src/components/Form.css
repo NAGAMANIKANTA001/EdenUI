@@ -1,0 +1,144 @@
+*{
+    font-size: 14px;
+    color: #273043;
+}
+.formContainer {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+.indexedStep {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: #4E5A74;
+    border: 1px rgba(200, 200, 200, 1) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fieldContainer {
+    width: 100%;
+    max-width: 430px;
+    margin-top: 50px;
+}
+.accomplished {
+    background-color: #664DE5;
+    color: white;
+    border: none;
+}
+.RSPBprogressBar {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    max-width: 340px;
+    width: calc(100% - 50px);
+}
+@media screen and (max-width: 200px) {
+    .RSPBprogressBar {
+        display: none;
+    }
+    .heading {
+        margin-top: 20px;
+    }
+}
+.submitButton {
+    background-color: #664DE5;
+    color: white;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.field {
+    border: 1px rgb(98,108,126,0.6) solid;
+    height: 48px;
+}
+.heading{
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.sub-heading {
+    color: rgba(78, 90, 116,0.8);
+    text-align: center;
+    font-size: 18px;
+}
+.card-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 30px 0px 20px;
+}
+.cards {
+    width: 45%;
+    height: 180px;
+    border: 2px #4E5A74 solid;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@keyframes shake {
+    0% {
+        border: 2px #4E5A74 solid;
+    }
+    100% {
+        border: 2px #664DE5 solid;
+        transform: rotateY(360deg);
+    }
+
+}
+
+.cards-active {
+    animation: shake 0.25s ease-in-out 0s 1 forwards;
+}
+.cards-active > .card-icon >g >path {
+    color: #664DE5 !important;
+    
+}
+.formField {
+    margin-bottom: 24px;
+}
+.formField > label{
+    color:rgba(98,108,126,1) !important;
+    font-weight: 600;
+}
+.label-suffix {
+    color: rgba(98,108,126,0.6);
+}
+.card-icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.card-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.done-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.done-icon-wrapper > svg{
+    height: 60px;
+    width: 60px;
+    background-color: #664DE5;
+    border-radius: 50%;
+    padding: 20px;
+    
+}
+.done-icon-wrapper > svg>path{
+    color: white !important;
+}
+.logo {
+    text-align: center;
+    margin-top: 20px;
+}
