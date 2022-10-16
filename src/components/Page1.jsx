@@ -1,10 +1,15 @@
 import Form from 'react-bootstrap/Form';
-import { useState } from 'react';
-
+import { useRef, useState, useEffect } from 'react';
 
 export function Page1(props) {
 
     const [hasError, setHasError] = useState(false);
+    const inputRef = useRef();
+
+    useEffect(() => {
+        inputRef.current.focus();
+    }, []);
+
     function handleSubmit() {
         if (props.fullName !== null && props.fullName !== "" && props.displayName !== null && props.displayName !== "") {
             setHasError(false)
@@ -13,6 +18,7 @@ export function Page1(props) {
             setHasError(true);
         }
     }
+
     return (
         <>
             <div className="heading-wrapper">
@@ -25,7 +31,7 @@ export function Page1(props) {
                 }
                 <Form.Group className='formField'>
                     <Form.Label className='label' htmlFor='full-name'>Full Name</Form.Label>
-                    <Form.Control className='field' placeholder='Enter your Full Name' id='full-name' value={props.fullName} onChange={(e) => { props.setFullName(e.target.value) }} />
+                    <Form.Control ref={inputRef} className='field' placeholder='Enter your Full Name' id='full-name' value={props.fullName} onChange={(e) => { props.setFullName(e.target.value) }} />
                 </Form.Group>
                 <Form.Group className='formField'>
                     <Form.Label className='label' htmlFor='display-name'>Display Name</Form.Label>

@@ -53,6 +53,10 @@
     border: none;
     border-radius: 5px;
     font-size: 16px;
+    transition: 0.2s;
+}
+.submitButton:hover {
+    scale: 1.02;
 }
 .field {
     border: 1px rgb(98,108,126,0.6) solid;

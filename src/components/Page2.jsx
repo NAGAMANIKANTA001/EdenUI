@@ -1,5 +1,5 @@
 import Form from 'react-bootstrap/Form';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 
@@ -13,6 +13,10 @@ export function Page2(props) {
             setHasError(true);
         }
     }
+    const inputRef = useRef();
+    useEffect(()=>{
+        inputRef.current.focus();
+    },[])
     return (
         <>
             <div className="heading-wrapper">
@@ -25,7 +29,7 @@ export function Page2(props) {
                 }
                 <Form.Group className='formField'>
                     <Form.Label className='label' htmlFor='workspace-name'>Workspace Name</Form.Label>
-                    <Form.Control  className='field' placeholder='Enter Workspace Name' id='workspace-name' value={props.workspaceName} onChange={(e) => props.setWorkspaceName(e.target.value)} />
+                    <Form.Control ref={inputRef}  className='field' placeholder='Enter Workspace Name' id='workspace-name' value={props.workspaceName} onChange={(e) => props.setWorkspaceName(e.target.value)} />
                 </Form.Group>
                 <Form.Group className='formField'>
                     <Form.Label className='label' htmlFor='workspace-url'>Workspace URL<span className='label-suffix'> (optional)</span></Form.Label>
